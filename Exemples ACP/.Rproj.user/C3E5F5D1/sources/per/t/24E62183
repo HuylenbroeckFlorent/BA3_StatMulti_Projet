@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1551434952421.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "528377604",
+    "id" : "24E62183",
+    "lastKnownWriteTime" : 1552239434,
+    "last_content_update" : 1552239434257,
+    "path" : "~/Bureau/cours/TPs/Stat_Multi/Lab2/Lab2.R",
+    "project_path" : "Lab2.R",
+    "properties" : {
+        "cursorPosition" : "26,0",
+        "scrollLine" : "9",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

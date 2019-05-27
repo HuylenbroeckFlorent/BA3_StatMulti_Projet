@@ -1,0 +1,39 @@
+#1.1
+#1)
+library(MASS)
+#3)
+x = mvrnorm(n = 1000,c(0,0),Sigma = cor_mat)
+y = mvrnorm(n = 1000,c(0,0),Sigma = cor_mat)
+#4)
+pdf("Lab2.pdf")
+plot(w[,1],w[,2],main = "1.1.4",asp = 1)
+points(mean(w[,1]),mean(w[,2]),col = "red")
+#5)
+lm = lm(x~y)
+lines(coef(lm),col = "yellow")
+#6)
+var(w)
+cov(w)
+#7)
+cor(w)
+w_ = scale(w)
+var(w_)
+cov(w_)
+cor(w_)
+#8)
+eigen(cov(w))
+#9)
+u = eigen(cov(w_))$vectors[,1]
+v = eigen(cov(w_))$vectors[,1]
+#2.1
+#read.table("chemin/relatif/fichier",h=T)
+rownames(pca1) = pca1$IDENT
+pca1 = pca1[-1,-1]
+freq1 = pca1$FREQ
+pca1 = pca1[,-length(pca1)]
+boxplot(pca1)
+boxplot(scale(pca1,T,scale = TRUE))
+cor_pca1 = cor(pca1) 
+max(abs(cor_pca1[abs(cor_pca1)<1.0 & abs(cor_pca1)>=0.5]))
+
+diag_cor_pca1 = eigen(cor_pca1)

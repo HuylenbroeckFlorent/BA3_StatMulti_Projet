@@ -1,0 +1,27 @@
+4 questions actives avec 10 modalités associées
+
+ 
+-V3- 	La famille est le seul endroit ou l'on se sent bien (2 modalités) 
+	FA01 = oui, FA02 = non. 
+-V4- 	Les dépenses de logement sont pour vous une charge (4 modalités) DL01 = négligeable, DL02 = sans gros problème, 
+	DL03 = une lourde charge, DL04 = Une très lourde charge. 
+-V7- 	Avez-vous souffert récemment de mal au dos (2 modalités) 
+	MA01 = oui, MA02 = non. 
+-V8- 	Vous imposez-vous régulièrement des restrictions (2 modalités) RE01 = oui, RE02 = non. 
+ 
+4 questions illustratives avec 10 modalités associées
+
+-V1- 	Sexe de l'enquêté(e) (2 modalités) 
+	MASC = masculin, FEMI = féminin. 
+-V5- 	Disposez-vous d'un magnétoscope (2 modalités) 
+	MAG1 = oui, MAG2 = non. 
+-V6- 	Avez-vous souffert récemment de maux de tête (2 modalités) 
+	MI01 = oui, MI02 = non. 
+-V9- 	Regardez-vous la télévision? (4 modalités) 
+	TV01 = tous les jours, TV02 = assez souvent, 
+	TV03 = pas très souvent, TV04 = jamais.
+ 
+1 variable continue illustrative
+
+-V2- 	Age de l'enquêté(e) (continue) 
+
