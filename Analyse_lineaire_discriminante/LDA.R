@@ -1,0 +1,6 @@
+library(ade4)
+data("chazeb")
+dis1 <- discrimin(dudi.pca(chazeb$tab, scan = FALSE), chazeb$cla,scan = FALSE)
+plot(dis1)
+data("skulls")
+plot(discrimin(dudi.pca(skulls,scan = F), gl(5,30),scan = F))
