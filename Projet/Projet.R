@@ -17,12 +17,16 @@ cor_table = cor(table)
 diag_cor_table = eigen(cor_table)
 
 table.pca = dudi.pca(df = table, scannf = FALSE, nf = 2)
+pdf("Tendance des données.pdf")
+score(table.pca)
+dev.off()
 pdf("Cercle de corrélation_Axes.pdf")
 s.corcircle(table.pca$c1)
 dev.off()
 pdf("Biplot.pdf")
 scatter(table.pca)
 dev.off()
+
 #Classification
 
 dist = dist(table)
