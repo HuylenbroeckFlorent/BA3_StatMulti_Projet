@@ -1,0 +1,5 @@
+Il y a une forte corrélation positive entre toutes les données, en effet
+aucune corrélation de variable n'est en-dessous de 0,9 dans notre matrice de corrélation.
+Comme montré dans ce *corrplot* : image du corrplot
+
+

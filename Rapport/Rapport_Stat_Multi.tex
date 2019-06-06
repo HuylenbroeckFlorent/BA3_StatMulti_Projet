@@ -1,0 +1,64 @@
+\documentclass{article}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Setup for fullpage use
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[final]{pdfpages}
+\usepackage{times}
+\usepackage{gensymb}
+\usepackage{color}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{titlesec}
+
+\includepdfset{pages = -, pagecommand = {}, scale = 0.9}
+\setcounter{secnumdepth}{4}
+\newcommand{\placeholder}[1]{{\noindent \color{red}[ #1 ]}}
+\newtheorem{Rem}{Remarque}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+
+\begin{document}
+
+
+\title{
+{\Huge Rapport du Projet\\
+Statistique Multidimensionnelle\\
+\smallskip
+\author{
+\textbf{Groupe Info n\degree 1}\\
+JOSSE Thomas, HUYLENBROECK Florent, DELFOSSE Charly\\
+}}
+}
+\date{Année Académique  2018-2019\\
+ Bachelier en Sciences Informatiques
+\\
+\vspace{1cm}
+Faculté des Sciences, UMons}
+
+
+
+\maketitle            % typeset the title of the contribution
+\bigskip
+\begin{center} \today \end{center}
+\begin{abstract}
+Ce rapport est écrit dans le cadre du cours de \texttt{Statistique Multidimensionnelle} dispensé par M. \emph{Michel VOUÉ}. Ce projet consistait en l'application de l'\texttt{Analyse en Composantes Principales} vues au cours sur un cas concret, ainsi que la découverte d'une technique d'analyse non abordée au cours à savoir, l'\texttt{Analyse Discriminante Linéaire} ou ADL.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Question 1 : ACP sur un cas concret}
+\section{Question 2 : \texttt{Analyse Discriminante Linéaire}}
+\end{document}
