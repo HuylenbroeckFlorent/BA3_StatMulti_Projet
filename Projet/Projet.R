@@ -6,6 +6,7 @@ if (!require("xlsx")){
 library(xlsx)
 library(ade4)
 library(MASS)
+library(corrplot)
 table = read.xlsx("../pourcentage_chercheurs_belgique.xlsx", sheetIndex = 1)
 rownames(table) = table$geo.time
 table = table[,-1]
@@ -13,7 +14,11 @@ pdf("Boxplots.pdf")
 boxplot(table,main="Boxplot des données")
 boxplot(scale(table,center = T,scale = T),main = "Boxplot des données centrées réduites")
 dev.off()
+
 cor_table = cor(table)
+pdf("Corrplot.pdf")
+corrplot(cor_table,type = "upper", order="hclust", tl.col="black",tl.srt=45,main="Corrplot des données de la matrice de corrélation")
+dev.off()
 diag_cor_table = eigen(cor_table)
 
 table.pca = dudi.pca(df = table, scannf = FALSE, nf = 2)
