@@ -6,7 +6,17 @@
 \usepackage{graphicx}
 \usepackage{amsmath,amsfonts,amsthm}
 
-\usetheme{Warsaw}
+\usetheme{Antibes}
+\AtBeginSection[]{
+	\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+		\usebeamerfont{title}\insertsectionhead\par%
+	\end{beamercolorbox}
+	\vfill
+	\end{frame}
+}
 
 \title{\texttt{Analyse Discriminate Linéaire}}
 \author{HUYLENBROECK Florent, DELFOSSE Charly, JOSSE Thomas}
@@ -27,54 +37,76 @@
 		On peut la comparer à la régression logistique. 
 	\end{frame}
 	\begin{frame}
-		\frametitle{La règle bayesienne}
-		Cette règle consiste à produire une estimation de la probabilité après notre affectation.
-		Cela veut dire que nous devons réaliser une estimation pour une probabilité conditionnelle:
-		\[
-			P(Y = y_k | X) = \frac{P(Y = y_k) \times P(X| Y = y_k)}{\sum_{i=1}^{K} P(Y = y_i)\times P(X|Y = y_i)}
-		\]
-		
-		Où $X$ contient les $j$ variables prédictives [$X = X_1,...,X_j$], $n$ est le nombre d'observations réparties dans $K$ groupe d'effectifs $n_k$, Y est notre variable à prédire qui prend des valeurs dans l'ensemble \{$y_1,...,y_K$\}. 
-		Nous avons aussi $P(Y = y_k)$ qui est la probabilité d'appartenance à la classe $y_k$ et $P(X|Y = y_k)$ qui est la fonction de densité des x si par rapport à l'appartenance à la classe $y_k$.
-	
-		Et donc, ce qu'on recherche avec l'analyse discriminante (en général car il existe d'autres type d'analyse discriminante) est de trouver l'estimation de $P(X|Y = y_k)$.
+		\frametitle{Variables utilisées}
+			$X$ contient les $j$ variables prédictives [$X = (X_1,...,X_j)$], $n$ est le nombre d'observations réparties dans $K$ groupe d'effectifs $n_k$, Y est notre variable à prédire qui prend des valeurs dans l'ensemble \{$y_1,...,y_K$\}.
+			$\pi_k = P(Y = y_k)$
 	\end{frame}
 	\section{Fonctionnement}
-	\subsection{Principe géométrique}
+	\subsection{Règle géométrique}
 	\begin{frame}
-		\frametitle{Ce qu'on veut}
+		\frametitle{But Final}
+		Cette règle ne prend en compte aucune hypothèse probabiliste. 
+		
+		Elle consiste à calculer la distance de x (vecteur des variables explicatives sur un individu que l'on veut classer) à chacun des K centres de gravité $g_1,...,g_K$ et affecter x au groupe \underline{le plus proche}.
+		
+		Et cette distance du nouvel individu au groupe k peut être trouvée via la formule:
+		\[
+			d^2(x,g_k) = (x - g_k)'\text{\bf W}^{-1}(x - g_k)
+		\]¸
+		Où {\bf W} est la matrice des variance-covariance intra-groupe.
 	\end{frame}
 	\begin{frame}
-		\frametitle{Développement}
-		\begin{itemize}
-			\item Chaque groupe d'observations remplacé par barycentre
-			\item On trace une droite perpendiculaire au segment qui relie les deux barycentres
-			\item L'intersection entre la droite tracée et le segment est appelé le point "zéro"
-			\item Cette droite est placée en fonction des échantillons (s'ils sont équilibrés la droite est équidistante des barycentres, sinon celle-ci est plus proche du barycentre dont l'échantillon est le plus représenté).
-		\end{itemize}
+	\frametitle{Développement}
+		Pour pouvoir faire cela, nous allons définir notre fonction linéaire discriminante du groupe k pour savoir si x appartient au groupe k* tel que:
+		\[
+			k^* = arg \underset{k = 1,...,K}{max} d^2(x,g_k)
+		\]
+		 que l'on peut réécrire:
+		\[
+		k^* = arg \underset{k = 1,...,K}{max} L_K(x)
+		\]
+		où 
+		\[
+		L_K(x) = x'\text{\bf W}^{-1}g_k - \frac{1}{2}g'_k\text{\bf W}^{-1}g_k
+		\]
+		Et $L_K(x)$ est notre fonction linéaire discriminante du groupe k.
+		
+		Chaque $L_K(x)$ définit une fonction score qui donne une note représentant la probabilité d'appartenance au groupe de la fonction linéaire. X est donc affecté au groupe dont le score est le plus grand.
 	\end{frame}
-
-	\subsection{Principe statistique}
+	\subsection{Approche statistique}
+	\begin{frame}
+	\frametitle{La règle bayesienne}
+	Cette règle consiste à produire une estimation de la probabilité après notre affectation.
+	Cela veut dire que nous devons réaliser une estimation pour une probabilité conditionnelle:
+	\[
+	P(Y = y_k | X) = \frac{P(Y = y_k) \times P(X| Y = y_k)}{\sum_{i=1}^{K} P(Y = y_i)\times P(X|Y = y_i)}
+	\]
+	
+	Nous avons $P(Y = y_k)$ qui est la probabilité d'appartenance à la classe $y_k$ et $P(X|Y = y_k)$ qui est la fonction de densité des x par rapport à l'appartenance à la classe $y_k$.
+	
+	Et cette règle permet d'affecter une nouvelle observation x au groupe k* tel que:
+	\[
+		k^* = arg \underset{k=1,...,K}{max} P(Y = y_k | X)
+	\] 
+	\[
+		k^*= arg \underset{k=1,...,K}{max} \pi_kf_k(x)
+	\]	
+	\end{frame}
+	\begin{frame}
+		\frametitle{Hypothèse d'homoscédasticité}
+		L'homoscédasticité est le fait que les variances de chaque groupe soit équivalente (son contraire est l'hétéroscédasticité). Cela veut dire que les données sont réparties de la même manière autour de leur moyenne, ou centre de gravité. 
+		
+		Pour pouvoir effectuer de l'analyse discriminante linéaire c'est la principale hypothèse que l'on doit appliquer à nos données.
+	\end{frame}
+	
 	\begin{frame}
 		\frametitle{Ce qu'on veut}
 		On veut replacer nos données dans un nouveau repère tel que les points sont le poche possible au sein d'un même groupe, mais ceux-ci doivent être aussi distants que possible entre les 2 groupes.
-		
-		$\Rightarrow$ Exemple aux slides suivantes.
 	\end{frame}
-
-	\begin{frame}
-		\frametitle{Données de base}
-		\includegraphics[width=\textwidth]{Stat_base}
-	\end{frame}
-
-	\begin{frame}
-	\frametitle{Nouveau repère}
-		\includegraphics[width=\textwidth]{Stat_nouveau}
-	\end{frame}
+	\section{Exemple}
 	\begin{frame}
 		Mettre package utilisé avec la méthode discrimin + explications
 	\end{frame}
-	\section{Exemple}
 	\begin{frame}
 		Montrer exemple
 	\end{frame}
