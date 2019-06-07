@@ -3,4 +3,4 @@
 \beamer@sectionintoc {2}{Fonctionnement}{6}{0}{2}
 \beamer@subsectionintoc {2}{1}{R\IeC {\`e}gle g\IeC {\'e}om\IeC {\'e}trique}{7}{0}{2}
 \beamer@subsectionintoc {2}{2}{Approche statistique}{9}{0}{2}
-\beamer@sectionintoc {3}{Exemple}{12}{0}{3}
+\beamer@sectionintoc {3}{Exemple}{13}{0}{3}

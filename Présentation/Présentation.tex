@@ -2,7 +2,7 @@
 
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
-
+\usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{amsmath,amsfonts,amsthm}
 
@@ -39,7 +39,8 @@
 	\begin{frame}
 		\frametitle{Variables utilisées}
 			$X$ contient les $j$ variables prédictives [$X = (X_1,...,X_j)$], $n$ est le nombre d'observations réparties dans $K$ groupe d'effectifs $n_k$, Y est notre variable à prédire qui prend des valeurs dans l'ensemble \{$y_1,...,y_K$\}.
-			$\pi_k = P(Y = y_k)$
+			$\pi_k = P(Y = y_k)$ et est la probabilité que Y soit dans le groupe $k$, $f_k(x)$ est la densité de probabilité de X dans le groupe k.
+			De plus nous allons travailler dans le cas gaussien et donc $X \sim \mathcal{N}(\mu_k,\Sigma_k)$ dans chaque groupe $k$, $E_k$ est le groupe d'individus possédant la modalité k dans l'échantillon et $n_k$ est le cardinal de $E_k$
 	\end{frame}
 	\section{Fonctionnement}
 	\subsection{Règle géométrique}
@@ -67,7 +68,7 @@
 		\]
 		où 
 		\[
-		L_K(x) = x'\text{\bf W}^{-1}g_k - \frac{1}{2}g'_k\text{\bf W}^{-1}g_k
+		L_K(x) = x'\text{\bf W}^{-1}\text{\bf g}_k - \frac{1}{2}\text{\bf g}'_k\text{\bf W}^{-1}g_k
 		\]
 		Et $L_K(x)$ est notre fonction linéaire discriminante du groupe k.
 		
@@ -100,14 +101,43 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Ce qu'on veut}
-		On veut replacer nos données dans un nouveau repère tel que les points sont le poche possible au sein d'un même groupe, mais ceux-ci doivent être aussi distants que possible entre les 2 groupes.
+		\frametitle{Développement}
+		L'hypothèse respectée on peut réécrire la règle de Bayes telle que :
+		\[
+			k^* = arg \underset{k=1,...,K}{max}x!\Sigma^{-1}\mu_k - \frac{1}{2}\mu'_k\Sigma^{-1}\mu_k + \ln(\pi_k)
+		\]
+		Il nous reste à estimer les  paramètres sur l'échantillon d'apprentissage:
+		\begin{itemize}
+			\item $\mu_k$ est estimée par $g_k = \frac{1}{n_k}\sum_{i\in E_k}x_i$
+			\item la matrice W avec $\Sigma$ commune à tous les groupes devient $\text{\bf W} = \frac{1}{n} \sum_{k=1}\sum_{i\in E_k}(x_i - \text{\bf g}_k)(x_i - \text{\bf g}_k)'$ avec biais ou sans biais :$$\text{\bf W} = \frac{1}{n - K}\sum_{k=1}\sum_{i\in E_k}x_i - \text{\bf g}_k)(x_i - \text{\bf g}_k)'$$
+		\end{itemize}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Développement (suite)}
+		On obtient ainsi notre règle pour classifier nos individus par l'analyse discriminante linéaire:
+		\[
+			k^* = arg \underset{k=1,...,K}{max}L_k(x)
+		\]
+		où
+		\[
+			L_k(x) = x'\text{\bf W}^{-1}\text{\bf g}_k - \frac{1}{2}\text{\bf g}'_k\text{\bf W}^{-1}\text{\bf g}_k + \ln(\hat{\pi}_k)
+		\] est la fonction linéaire discriminante du groupe $k$ et où $\hat{\pi}_k = \frac{n_k}{n}$. Elle fonctionne comme dans la règle géométrique.
+		
 	\end{frame}
 	\section{Exemple}
 	\begin{frame}
-		Mettre package utilisé avec la méthode discrimin + explications
+		Pour réaliser notre exemple, nous avons utiliser la fonction \texttt{discrimin} du package \texttt{ade4} de R qui nous a permis de réaliser l'analyse discriminante de la table de données "\emph{chazeb}" qui est fournie avec ce package ainsi que la table "\emph{skulls}" du même package.
 	\end{frame}
 	\begin{frame}
-		Montrer exemple
+		\begin{figure}[h]
+			\begin{subfigure}[b]{0.4\textwidth}
+				\includegraphics[width=4cm]{Chazeb}
+				\caption{Chazeb}
+			\end{subfigure}
+			\begin{subfigure}[b]{0.4\textwidth}
+				\includegraphics[width=4cm]{Skulls}
+				\caption{Skulls}
+			\end{subfigure}
+		\end{figure}
 	\end{frame}
 \end{document}

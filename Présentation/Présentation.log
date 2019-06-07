@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.6.6)  7 JUN 2019 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.6.6)  7 JUN 2019 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,6 +691,32 @@ Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks44
 \inpenc@posthook=\toks45
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/05/01 v3.3-147 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/05/27 v1.8a caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen258
+\captionmargin@=\dimen259
+\captionwidth=\dimen260
+\caption@tempdima=\dimen261
+\caption@indent=\dimen262
+\caption@parindent=\dimen263
+\caption@hangindent=\dimen264
+)
+\c@ContinuedFloat=\count165
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+)
+\c@subfigure=\count166
+\c@subtable=\count167
+)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeAntibes.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemetree.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
@@ -750,16 +776,16 @@ LaTeX Font Info:    ... okay on input line 24.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count165
-\scratchdimen=\dimen258
+\scratchcounter=\count168
+\scratchdimen=\dimen265
 \scratchbox=\box50
-\nofMPsegments=\count166
-\nofMParguments=\count167
+\nofMPsegments=\count169
+\nofMParguments=\count170
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count168
-\MPscratchDim=\dimen259
-\MPnumerator=\count169
-\makeMPintoPDFobject=\count170
+\MPscratchCnt=\count171
+\MPscratchDim=\dimen266
+\MPnumerator=\count172
+\makeMPintoPDFobject=\count173
 \everyMPtoPDFconversion=\toks47
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -788,7 +814,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count171
+\c@section@level=\count174
 )
 LaTeX Info: Redefining \ref on input line 24.
 LaTeX Info: Redefining \pageref on input line 24.
@@ -884,6 +910,8 @@ Package french.ldf Warning: OT1 encoding should not be used for French.
 (french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
 (french.ldf)                of your document; reported on input line 24.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 (./Présentation.nav) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
@@ -894,31 +922,31 @@ Package french.ldf Warning: OT1 encoding should not be used for French.
 ] [4
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 43.
+line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 44.
 
-LaTeX Font Info:    No file OMScmss.fd. on input line 43.
+LaTeX Font Info:    No file OMScmss.fd. on input line 44.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 43.
+(Font)              for symbol `textbraceleft' on input line 44.
 
 [5
 
@@ -927,7 +955,7 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 ] [7
 
 ]
-Overfull \vbox (1.37215pt too high) detected at line 75
+Overfull \vbox (1.37215pt too high) detected at line 76
  []
 
 [8
@@ -945,6 +973,19 @@ Overfull \vbox (1.37215pt too high) detected at line 75
 ] [14
 
 ]
+<Chazeb.png, id=501, 676.5275pt x 639.38875pt>
+File: Chazeb.png Graphic file (type png)
+<use Chazeb.png>
+Package pdftex.def Info: Chazeb.png  used on input line 142.
+(pdftex.def)             Requested size: 113.81102pt x 107.56291pt.
+<Skulls.png, id=503, 674.52pt x 672.5125pt>
+File: Skulls.png Graphic file (type png)
+<use Skulls.png>
+Package pdftex.def Info: Skulls.png  used on input line 142.
+(pdftex.def)             Requested size: 113.81102pt x 113.46362pt.
+ [15
+
+ <./Chazeb.png> <./Skulls.png>]
 \tf@nav=\write6
 \openout6 = `Présentation.nav'.
 
@@ -954,11 +995,12 @@ Overfull \vbox (1.37215pt too high) detected at line 75
 \tf@snm=\write8
 \openout8 = `Présentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
- (./Présentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+
+(./Présentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 Package rerunfilecheck Info: File `Présentation.out' has not changed.
 (rerunfilecheck)             Checksum: C28EF119C6D875A542CC1D8A47252A2B;282.
 
@@ -967,30 +1009,31 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18288 strings out of 492641
- 343905 string characters out of 6131788
- 436809 words of memory out of 5000000
- 21728 multiletter control sequences out of 15000+600000
- 11914 words of font info for 44 fonts, out of 8000000 for 9000
+ 19460 strings out of 492641
+ 365546 string characters out of 6131788
+ 459305 words of memory out of 5000000
+ 22883 multiletter control sequences out of 15000+600000
+ 12744 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,60p,780b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,15n,60p,780b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-tt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pf
-b>
-Output written on Présentation.pdf (14 pages, 140111 bytes).
+/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on Présentation.pdf (15 pages, 329517 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 34 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 593 PDF objects out of 1000 (max. 8388607)
+ 507 compressed objects within 6 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
