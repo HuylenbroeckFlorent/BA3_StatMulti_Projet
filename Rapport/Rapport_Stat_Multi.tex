@@ -63,52 +63,120 @@ Ce rapport est écrit dans le cadre du cours de \texttt{Statistique Multidimensi
 Pour cette question nous avions plusieurs sous-points à analyser: tout d'abord effectuer notre ACP des données à proprement dites, puis prédire à l'aide de notre analyse si le profil des données était stable et ensuite grouper les Provinces/Régions qui avaient des comportements similaires avec une méthode de classification hiérarchique ascendante. 
 
 \subsection{ACP}
-D'abord, les données ont été extraites et analysées, un boxplot a été effectué avant et après centrage et réduction des données.
+D'abord, les données ont été extraites et analysées. Les données représente l'évolution du pourcentage de chercheurs employés par les différentes provinces de Belgique.Un boxplot a été effectué avant et après centrage et réduction des données.
 
  \includegraphics[width=15cm,height=8cm]{"Boxplot1"}
  
-On remarque que la moyenne et les quantiles ont tendance à augmenter au fil des années.
+On remarque que la moyenne et les quantiles ont tendance à augmenter au fil des années. Comme nous voulons utiliser l'analyse en composantes principales centrée réduite, nous devons centrer et réduire nos données, voici un boxplot des données après cette opération.
 
  \includegraphics[width=15cm,height=8cm]{"Boxplot2"} 
  
-Une fois les données centrées et réduites, on remarque que la moyenne et les quantiles sont plutôt constants au fil des ans ce qui est normal vu que les données ont été réduites.
+On peut déjà observer un aperçu du comportement des données d'une année à une autre. 
 
- On a ensuite cherché à connaitre la correlation entre les variables, pour se faire, la matrice de correlation a été calculées.
- La voici:
+ \includegraphics[width=15cm,height=8cm]{"pairs"}
+ 
+On remarque que les données ont l'air de suivre un modèle linéaire dans le temps, nous verrons par la suite si c'est réellement le cas. 
+
+L'analyse en composante principale va permettre de mieux comprendre les données en réduisant le nombre de dimensions. Celle-ci va chercher un ou plusieurs axes ne passant plus forcèment par l'origine qui maximisent la distance entre tous les individus(dans notre cas les provinces)sur cet axe c'est à dire : $Max(H)(\sum_i^n \sum_j^n d_H^2(i,j))$ où n est le nombre d'individu, H l'axe en question et $d^2_H(i,j)$ la distance euclidienne entre 2 individus i et j sur l'axe H. Si $h_i$ est la projection de i sur l'axe H alors $d^2_H(i,j)=2n \sum_i^n (h_i - \bar{h})$ où $\bar{h}$ est la moyenne des projections de l'ensemble des individus sur H. On peut montrer que maximiser cette distance revient à maximiser la distance sur H entre tous les individus et le centre de gravité, on peut donc prendre celui-ci comme nouvelle origine et maximiser la distance des points à l'origine. Les nouvelles coordonnées des individus sont données par $x_{ij}=r_{ij} - \bar{r}_{ij}$. On décide ensuite de réduire nos données pour les mettre à l'échelle même si les variables ont les mêmes unités(pourcentages), on obtient donc les coordonnées centrées réduites : $x_{ij}=\frac{r_{ij} - \bar{r}_{ij}}{s_j \sqrt{n}}$ où $s_j$ est l'écart type de j.Après cette étape, nous voulons connaitre les similarités ou assimilarités entre la façon dont les variables varient les unes par rapport aux autres, pour se faire, la matrice de corrélation est calculée. la voici :
  
  \includegraphics[width=15cm,height=10cm]{"Corr"}
  
- Ce graphique représente la moitié de cette matrice, l'autre moitié est inutile car la matrice de correlation est égale à sa transposée. On remarque que toutes les correlations sont très proches de 1.Ceci s'explique par le fait que les données représentent l'évolution du pourcentage de chercheurs employés dans les différentes régions de Belgique au fil des ans. En effet, les valeurs de ce pourcentage d'une année à une autre sont fortement liées/correlées, la valeur de celui-ci à une année est basée sur sa valeur à l'année précédente et n'évolue pas drastiquement. La plus petite correlation est entre l'année 2008 et 2014, celle-ci vaut 0.915, ceci s'explique par le fait qu'il y a surement eu une inversion de tendance entre ces 2 années, que certaines villes ont eu un pourcentage plus élevé et l'inverse pour d'autres, par exemple le brabant wallon est passé de 1.55\% en 2008 à 3.1\% en 2014, la majorité des autres villes n'ont pas eu une telle augmentation. 
+On remarque que toutes les correlations sont très proches de 1.Ceci s'explique par le fait que les données représentent l'évolution du pourcentage de chercheurs employés dans les différentes régions de Belgique au fil des ans. En effet, les valeurs de ce pourcentage d'une année à une autre sont fortement liées/correlées, la valeur de celui-ci à une année est basée sur sa valeur à l'année précédente et n'évolue pas drastiquement. La plus petite correlation est entre l'année 2008 et 2014, celle-ci vaut 0.915, ceci s'explique par le fait qu'il y a surement eu une inversion de tendance entre ces 2 années, que certaines villes ont eu un pourcentage plus élevé et l'inverse pour d'autres, par exemple le brabant wallon est passé de 1.55\% en 2008 à 3.1\% en 2014, la majorité des autres villes n'ont pas eu une telle augmentation.
+
+Pour déterminer les composantes principales, c'est à dire les axes donnant la direction de la plus grande variance des données(vecteurs propres), il faut déterminer la portion de variance expliquée par chaque axe, ce n'est rien d'autres que les valeurs propres de la matrice de corrélation. Les voici :
+\begin{table}[h]
+\centering 
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} 
+  \hline
+  8.806 & 0.128 & 0.04 & 0.02 & 0.004 & 0.001 & 0.0005 & 0.0001 & 0.00004 \\
+  \hline
+\end{tabular}
+\end{table}
+\newpage
+On remarque la première valeur propre est bien plus grande que les autres, en réalité le premier axe représente 97.8\% du pourcentage de l'inertie, le 2e ne représente lui que 1.44\%. Le graphe ci-dessous illustre ce fait.
+
+ \includegraphics[width=12cm,height=8cm]{"screebar"}
  
- On a ensuite déterminé les valeurs propres de la matrice de correlation, les voici :
- TABLEAU EIGENVALUES
- On remarque la première est bien plus grande que les autres, en réalité le premier axe représente 97.8\% du pourcentage de l'inertie, le 2e ne représente lui que 1.44\%.
- Pour connaitre le nombre de facteurs à retenir, il y a plusieurs critères possibles.  
- Selon le critère de Kaiser, il faudrait retenir celle qui ont une valeur propre plus grande que 1, dans notre cas, il ne faudrait donc retenir que la première.
- Un autre critère dit qu'il faut garder la valeur avant le "coude" c'est à dire l'éboulement dans le graphe de l'inertie que voici : 
- \newpage
+Pour connaitre le nombre de facteurs à retenir, il y a plusieurs critères possibles.  
+Selon le critère de Kaiser, il faudrait retenir celle qui ont une valeur propre plus grande que 1, dans notre cas, il ne faudrait donc retenir que la première.
+Un autre critère dit qu'il faut garder la valeur avant le "coude" c'est à dire l'éboulement dans le graphe de l'inertie que voici : 
+ 
   \includegraphics[width=12cm,height=8cm]{"screeplot"}
  
  
-	On remarque que le coude s'effectue entre la première et la deuxième valeur, selon ce critère il faudrait donc aussi ne garder que le premier facteur.
-  
-Pour appliquer l'analyse par composantes principales, il a donc été décidé de ne garder qu'une composante.
+On remarque que le coude s'effectue entre la première et la deuxième valeur, selon ce critère il faudrait donc aussi ne garder que le premier facteur.
+\\Pour appliquer l'analyse par composantes principales, il a donc été décidé de ne garder qu'une composante.
+\\On obtient donc la seule composante principale, voici un tableau présentant les nouvelles coordonnées des variables sur cette composante(droite) par rapport leurs directions dans les anciens axes.
+\begin{table}[h]
+\centering 
+\begin{tabular}{|c|c|c|} 
+  \hline
+  Variables & Nouvelles coord & Anciens axes\\
+  \hline
+  X2006 & -0.994 & -0.335\\
+  \hline
+  X2007 & -0.995 & -0.335\\
+  \hline
+  X2008 & -0.973 & -0.328\\
+  \hline
+  X2009 & -0.989 & -0.333\\
+  \hline
+  X2010 & -0.991 & -0.334\\
+  \hline
+  X2011 & -0.994 & -0.335\\
+  \hline
+  X2013 & -0.990 & -0.333\\
+  \hline
+  X2014 & -0.981 & -0.330\\
+  \hline
+  X2015 & -0.996 & -0.336\\
+  \hline
+\end{tabular}
+\end{table}
 
-On obtient donc la seule composante principale, en voici les coefficients :
-	TABLE COEFFICIENTS
+Les coefficients de cette composante sont quasi identiques, ceci est le résultat du fait que toutes les variables sont fortement correlées à celle-ci.
+\\Sur le graphique ci-dessous, on observe la droite de la premiere composante pour chaque variable, on remarque que celle-ci symbolise bien la direction de la plus grande variance dans les données, on voit même que les données suivent presque un modèle linéaire sur celle-ci. 
 
-Voici la droite de corrélation : DROITE DE CORRELATION
- 
-Les coefficients de cette composante sont quasi identiques, ceci est le résultat du fait que toutes les variables sont fortement correlées.
-
-Sur le graphique ci-dessous, on observe la droite de la premiere composante pour chaque variable, on remarque que celle-ci symbolise bien la direction de la plus grande variance dans les données, on voit même que les données suivent un modèle linéaire. 
-
-	\includegraphics[width=12cm,height=8cm]{"score"} 
+	\includegraphics[width=10cm,height=7cm]{"score"} 
 	
-Les nouvelles positions des données ont été determinée sur cette droite :
-	GRAPHIQUES POSITIONS
- 
-\subsection{Le profil est-il stable ?}
+	
+DROITE CORRELATION
+Les nouvelle coordonnées des individus sur cette composante peuvent être obtenues par la formule : $N_i=\sum_j^n u_j x_{ij}$ où n est le nombre de variables, $u_j$ est le $j^{eme}$ coefficient de la composante dans les anciens axes et $x_{ij}$ est $j^{eme}$ coordonnée de l'individu i dans les anciens axes(centré et réduit).On peut aussi déterminer la contribution de chaque individu à l'inertie de la composante par : $Cr(i)=N_i^2$.
+\begin{table}[h]
+\centering 
+\begin{tabular}{|c|c|c|} 
+  \hline
+  Individus & Coordonées & Contribution(\%)\\
+  \hline
+  Bruxelles/Brussels Gewest & -3.472 & 12.443\\
+  \hline  
+  Antwerpen         &   -0.109    &    0.012\\
+  \hline  
+  Limburg (BE)       &     2.45   &   6.2\\
+  \hline  
+  Oost-Vlaanderen     &  -0.526   &    0.285\\
+  \hline  
+  Vlaams-Brabant       &  -3.896 &    15.673\\
+  \hline  
+  West-Vlaanderen     &   2.451  &     6.201\\
+  \hline  
+  Brabant Wallon     &   -5.773 &     34.407\\
+  \hline
+  Hainaut             &  2.296 &      5.44\\
+  \hline  
+  Liège              &  0.911  &     0.858\\
+  \hline  
+  Luxembourg (BE)     & 3.793 &      14.852\\
+  \hline
+  Namur              & 1.875   &      3.629\\
+  \hline
+\end{tabular}
+\end{table}
+
+ \newpage
+\subsection{Le profil est-il stable dans le temps ?}
+
+Le profil est stable car on a vu au point précédent que la matrice des correlations avaient des coefficients très proches de 1, donc en général aucune année n'a vraiment un comportement différent d'une autre dans les données, on a pas des changements imprévus c'est à dire une province qui verrait son pourcentage augmenter ou diminuer de façon inhabituelle d'une année à une autre. Le profil est donc stable dans le sens où dans le temps, celui-ci garde globalement le même comportement. 
 
 \subsection{Groupement des régions}
 
