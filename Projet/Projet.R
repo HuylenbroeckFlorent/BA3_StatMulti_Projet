@@ -21,19 +21,15 @@ corrplot(cor_table,type = "upper", order="hclust", tl.col="black",tl.srt=45,main
 dev.off()
 diag_cor_table = eigen(cor_table)
 
-table.pca = dudi.pca(df = table, scannf = FALSE, nf = 2, scale = T)
-pdf("Tendance des données.pdf")
+table.pca = dudi.pca(df = table, scannf = FALSE, nf = 1,scale=T,center=T)
+screeplot(table.pca,type="bar",main="Inertie en fonction de la composante de PCA")
+barplot(table.pca$eig/sum(table.pca$eig)*100,names.arg = c("C1","C2","C3","C4","C5","C6","C7","C8","C9"),ylim = c(0,100),ylab="Pourcentage variance",xlab="Composante",main = "Pourcentage de variance expliquée en fonction de la composante")
 score(table.pca)
-dev.off()
-pdf("Cercle de corrélation_Années.pdf")
-s.corcircle(table.pca$c1)
-dev.off()
-pdf("Cercle de corrélation_Régions.pdf")
-s.corcircle(table.pca$l1)
-dev.off()
-pdf("Biplot.pdf")
-scatter(table.pca)
-dev.off()
+table.pca$c1
+table.pca$co
+table.pca$li
+inertia.dudi(table.pca,row.inertia = T)$row.abs
+
 
 #Classification
 
