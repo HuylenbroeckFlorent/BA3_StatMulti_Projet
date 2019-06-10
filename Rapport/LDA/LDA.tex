@@ -1,0 +1,78 @@
+\section*{Q2 : L'analyse discriminante linéaire}
+\subsection{Introduction}
+L'analyse discriminante linéaire (\emph{ADL}) est une technique d'analyse discriminante prédictive. Son but es de pouvoir expliquer et prédire l'appartenance d'un individu à un groupe prédéfini à partir de caractéristiques qui ont été mesurées au préalable grâce à des varibles prédictives. Cette technique est comparable à la régression logistique.
+\subsection{Fonctionnement}
+Le principe de cette analyse est de calculer la distance entre $x$ (le vecteur des variables explicatives sur un individu que l'on veut classser) et chacun des $K$ centres de gravité des groupes $g_1,\ldots,g_K$ pour ensuite affecter $x$ au groupe le plus proche.\\
+Cette distance peut être trouvée via la formule :
+\[
+	d^2(x,g_k) = (x - g_k)'\text{\bf W}^{-1}(x - g_k)\text{,}
+\]
+Où {\bf W} est la matrice des variance-covariance intra-groupe.\\
+Pour cela, nous allons définir notre fonction linéaire discriminante du groupe $k$ pour savoir si $x$ appartient au groupe $k^*$ tel que :
+\[
+	k^* = arg \underset{k = 1,...,K}{max} d^2(x,g_k)
+\]
+que l'on peut réécrire:
+\[
+	k^* = arg \underset{k = 1,...,K}{max} L_K(x)
+\]
+où 
+\[
+	L_K(x) = x'\text{\bf W}^{-1}\text{\bf g}_k - \frac{1}{2}\text{\bf g}'_k\text{\bf W}^{-1}g_k
+\]
+Et $L_K(x)$ est notre fonction linéaire discriminante du groupe k.\\
+Chaque $L_k(x)$ définit donc une fonction score qui donne une note représentant la probabilité d'appartenance au groupe de la fonction linéaire. $X$ est donc affecté au groupe dont le score est le plus élevé.
+\subsection{Approche statistique}
+\subsubsection{La règle bayesienne}
+	Cette règle consiste à produire une estimation de la probabilité après notre affectation.
+	Cela veut dire que nous devons réaliser une estimation pour une probabilité conditionnelle:
+	\[
+	P(Y = y_k | X) = \frac{P(Y = y_k) \times P(X| Y = y_k)}{\sum_{i=1}^{K} P(Y = y_i)\times P(X|Y = y_i)}
+	\]
+	
+	Nous avons $P(Y = y_k)$ qui est la probabilité d'appartenance à la classe $y_k$ et $P(X|Y = y_k)$ qui est la fonction de densité des x par rapport à l'appartenance à la classe $y_k$.
+	
+	Et cette règle permet d'affecter une nouvelle observation x au groupe k* tel que:
+	\[
+		k^* = arg \underset{k=1,...,K}{max} P(Y = y_k | X)
+	\] 
+	\[
+		k^*= arg \underset{k=1,...,K}{max} \pi_kf_k(x)
+	\]	
+
+\subsubsection{Hypothèse d'homoscédasticité}
+L'homoscédasticité est le fait que les variances de chaque groupe soit équivalente (son contraire est l'hétéroscédasticité). Cela veut dire que les données sont réparties de la même manière autour de leur moyenne, ou centre de gravité. 
+		
+		Pour pouvoir effectuer de l'analyse discriminante linéaire c'est la principale hypothèse que l'on doit appliquer à nos données.
+	
+\subsubsection{Développement}
+\noindent L'hypothèse respectée on peut réécrire la règle de Bayes telle que :
+\[
+	k^* = arg \underset{k=1,...,K}{max}x!\Sigma^{-1}\mu_k - \frac{1}{2}\mu'_k\Sigma^{-1}\mu_k + \ln(\pi_k)
+\]
+Il nous reste à estimer les  paramètres sur l'échantillon d'apprentissage:
+\begin{itemize}
+	\item $\mu_k$ est estimée par $g_k = \frac{1}{n_k}\sum_{i\in E_k}x_i$
+	\item la matrice W avec $\Sigma$ commune à tous les groupes devient $\text{\bf W} = \frac{1}{n} \sum_{k=1}\sum_{i\in E_k}(x_i - \text{\bf g}_k)(x_i - \text{\bf g}_k)'$ avec biais ou sans biais :$$\text{\bf W} = \frac{1}{n - K}\sum_{k=1}\sum_{i\in E_k}x_i - \text{\bf g}_k)(x_i - \text{\bf g}_k)'$$
+\end{itemize}
+On obtient ainsi notre règle pour classifier nos individus par l'analyse discriminante linéaire:
+\[
+	k^* = arg \underset{k=1,...,K}{max}L_k(x)
+\]
+où
+\[
+			L_k(x) = x'\text{\bf W}^{-1}\text{\bf g}_k - \frac{1}{2}\text{\bf g}'_k\text{\bf W}^{-1}\text{\bf g}_k + \ln(\hat{\pi}_k)
+		\] est la fonction linéaire discriminante du groupe $k$ et où $\hat{\pi}_k = \frac{n_k}{n}$. Elle fonctionne comme dans la règle géométrique.
+		
+\newpage
+\section{Exemple}
+
+Pour réaliser notre exemple, nous avons utiliser la fonction \texttt{discrimin} du package \texttt{ade4} de R qui nous a permis de réaliser l'analyse discriminante de la table de données "\emph{chazeb}" qui est fournie avec ce package ainsi que la table "\emph{skulls}" du même package.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.33]{"LDA/Chazeb"}
+\caption{Chazeb}
+
+\includegraphics[scale=.33]{"LDA/Skulls"}
+\caption{Skulls}
+\end{figure}

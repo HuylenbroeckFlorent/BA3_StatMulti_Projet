@@ -3,5 +3,10 @@
 \BOOKMARK [2][-]{subsection.1.2}{ACP}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Le profil est-il stable dans le temps ?}{section.1}% 4
 \BOOKMARK [1][-]{section.2}{Groupement des R\351gions}{}% 5
-\BOOKMARK [1][-]{section.3}{Question 2 : Analyse Discriminante Lin\351aire}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Utilit\351 et }{section.3}% 7
+\BOOKMARK [2][-]{subsection.2.1}{Introduction}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Fonctionnement}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Approche statistique}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.3.1}{La r\350gle bayesienne}{subsection.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Hypoth\350se d'homosc\351dasticit\351}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.3}{D\351veloppement}{subsection.2.3}% 11
+\BOOKMARK [1][-]{section.3}{Exemple}{}% 12
