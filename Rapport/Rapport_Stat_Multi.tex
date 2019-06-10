@@ -134,13 +134,12 @@ On remarque que le coude s'effectue entre la première et la deuxième valeur, s
 \end{tabular}
 \end{table}
 
-Les coefficients de cette composante sont quasi identiques, ceci est le résultat du fait que toutes les variables sont fortement correlées à celle-ci.
-\\Sur le graphique ci-dessous, on observe la droite de la premiere composante pour chaque variable, on remarque que celle-ci symbolise bien la direction de la plus grande variance dans les données, on voit même que les données suivent presque un modèle linéaire sur celle-ci. 
+Les coefficients de cette composante sont quasi identiques, ceci est le résultat du fait que toutes les variables sont fortement correlées à celle-ci. Toutes les variables sont très proches du cercle des corrélations comme elles valent presque toutes 1.
+
+\\Sur les graphiques ci-dessous, pour chaque variable, on effectue une regression linéaire pour exprimer les valeurs initiales des individus en cette variable en fonction de leur valeurs dans la première composante. On remarque que pour toutes les variables, les points sont très proches de cette droite de regression, ceci explique le fait que la première composante explique tant de variance. La première composante suffit à elle toute seule pour résumer en une dimension toutes les informations.
 
 	\includegraphics[width=10cm,height=7cm]{"score"} 
 	
-	
-DROITE CORRELATION
 Les nouvelle coordonnées des individus sur cette composante peuvent être obtenues par la formule : $N_i=\sum_j^n u_j x_{ij}$ où n est le nombre de variables, $u_j$ est le $j^{eme}$ coefficient de la composante dans les anciens axes et $x_{ij}$ est $j^{eme}$ coordonnée de l'individu i dans les anciens axes(centré et réduit).On peut aussi déterminer la contribution de chaque individu à l'inertie de la composante par : $Cr(i)=N_i^2$.
 \begin{table}[h]
 \centering 
