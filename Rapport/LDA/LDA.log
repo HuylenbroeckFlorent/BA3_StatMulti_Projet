@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.5.8)  10 JUN 2019 02:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.6.6)  10 JUN 2019 10:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **LDA.tex
 (./LDA.tex
-LaTeX2e <2018-12-01>
+LaTeX2e <2018-04-01> patch level 5
 ! Undefined control sequence.
 l.1 \section
             *{Q2 : L'analyse discriminante linéaire}
@@ -3374,7 +3374,7 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.73 \includegraphics
-                     [scale=.40]{"LDA/Chazeb"}
+                     [scale=.33]{"LDA/Chazeb"}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3389,8 +3389,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
 Missing character: There is no . in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 3 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no " in font nullfont!
 Missing character: There is no L in font nullfont!
@@ -3469,7 +3469,7 @@ Overfull \hbox (4.44444pt too wide) in paragraph at lines 70--75
 
 ! Undefined control sequence.
 l.76 \includegraphics
-                     [scale=.40]{"LDA/Skulls"}
+                     [scale=.33]{"LDA/Skulls"}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3484,8 +3484,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
 Missing character: There is no . in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 3 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no " in font nullfont!
 Missing character: There is no L in font nullfont!
@@ -3538,10 +3538,10 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 30 strings out of 492615
- 360 string characters out of 6131391
- 64425 words of memory out of 5000000
- 4038 multiletter control sequences out of 15000+600000
+ 30 strings out of 492641
+ 360 string characters out of 6131788
+ 63841 words of memory out of 5000000
+ 4013 multiletter control sequences out of 15000+600000
  4154 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  18i,4n,16p,403b,113s stack positions out of 5000i,500n,10000p,200000b,80000s
