@@ -134,9 +134,9 @@ On remarque que le coude s'effectue entre la première et la deuxième valeur, s
 \end{tabular}
 \end{table}
 
-Les coefficients de cette composante sont quasi identiques, ceci est le résultat du fait que toutes les variables sont fortement correlées à celle-ci. Toutes les variables sont très proches du cercle des corrélations comme elles valent presque toutes 1.
+Les coefficients de cette composante sont quasi identiques, ceci est le résultat du fait que toutes les variables sont fortement corrélées à celle-ci. Toutes les variables sont très proches du cercle des corrélations comme elles valent presque toutes 1.
 
-\\Sur les graphiques ci-dessous, pour chaque variable, on effectue une regression linéaire pour exprimer les valeurs initiales des individus en cette variable en fonction de leur valeurs dans la première composante. On remarque que pour toutes les variables, les points sont très proches de cette droite de regression, ceci explique le fait que la première composante explique tant de variance. La première composante suffit à elle toute seule pour résumer en une dimension toutes les informations.
+Sur les graphiques ci-dessous, pour chaque variable, on effectue une regression linéaire pour exprimer les valeurs initiales des individus en cette variable en fonction de leur valeurs dans la première composante. On remarque que pour toutes les variables, les points sont très proches de cette droite de régression, ceci explique le fait que la première composante explique tant de variance. La première composante suffit à elle toute seule pour résumer en une dimension toutes les informations.
 
 	\includegraphics[width=10cm,height=7cm]{"score"} 
 	
@@ -175,7 +175,7 @@ Les nouvelle coordonnées des individus sur cette composante peuvent être obten
  \newpage
 \subsection{Le profil est-il stable dans le temps ?}
 
-Le profil est stable car on a vu au point précédent que la matrice des correlations avaient des coefficients très proches de 1, donc en général aucune année n'a vraiment un comportement différent d'une autre dans les données, on a pas des changements imprévus c'est à dire une province qui verrait son pourcentage augmenter ou diminuer de façon inhabituelle d'une année à une autre. Le profil est donc stable dans le sens où dans le temps, celui-ci garde globalement le même comportement. 
+Le profil est stable car on a vu au point précédent que la matrice des corrélations avaient des coefficients très proches de 1, donc en général aucune année n'a vraiment un comportement différent d'une autre dans les données, on a pas des changements imprévus c'est à dire une province qui verrait son pourcentage augmenter ou diminuer de façon inhabituelle d'une année à une autre. Le profil est donc stable dans le sens où dans le temps, celui-ci garde globalement le même comportement. 
 
 \subsection{Groupement des Régions}
 Avant de pouvoir classer les différentes régions/provinces en groupes, nous devons effectuer les calculs pour obtenir la matrice des distances.
@@ -226,8 +226,8 @@ Pour réaliser celui-ci nous avons appliqué le critère de Ward généralisé q
 
 Maintenant que nous avons notre arbre des distances nous pouvons nous atteler à la tâche de diviser celui-ci en différentes classes. Comment faire cela ? Nous devons nous intéresser à la décroissance de l'inertie intraclasse. En effet, lorsque celle-ci diminue de manière plus faible cela veut dire que le nombre de groupe choisi est optimal.
 
-\includegraphics[width=10cm]{Inertie}
-\newpage
+\includegraphics[width=9cm]{Inertie}
+
 D'après ce graphique, on pourrait classer nos individus en 5 groupes puisque c'est à ce niveau que l'inertie intraclasse se stabilise $\Rightarrow$ le critère d'optimalité.
 
 Avec toutes ces données nous pouvons donner une forme finale à notre arbre des distances qui contiendra les différents groupes d'individus.
@@ -237,7 +237,7 @@ Le voici :
 \includegraphics[width=\textwidth]{Ward}
 
 Ce graphique nous montre la classification de nos régions qui ont les mêmes comportements au fur et à mesure du temps.
-
+\newpage
 \input{LDA/LDA.tex}
 
 \end{document}
