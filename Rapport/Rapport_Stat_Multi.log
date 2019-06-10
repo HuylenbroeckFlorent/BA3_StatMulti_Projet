@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.6.6)  10 JUN 2019 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.6.6)  10 JUN 2019 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -708,8 +708,8 @@ Package pdftex.def Info: "Corr".png  used on input line 82.
 (pdftex.def)             Requested size: 426.79005pt x 284.53017pt.
 
 Overfull \hbox (5.47028pt too wide) in paragraph at lines 84--85
-[]\OT1/ptm/m/n/10 On re-marque que toutes les cor-re-la-tions sont tr[]es proch
-es de 1.Ceci s'ex-plique par le fait que les donn[]ees repr[]esentent
+[]\OT1/ptm/m/n/10 On re-marque que toutes les corr[]elations sont tr[]es proche
+s de 1.Ceci s'ex-plique par le fait que les donn[]ees repr[]esentent
  []
 
 [5 <./Corr.png>]
@@ -1168,13 +1168,13 @@ Package rerunfilecheck Info: File `Rapport_Stat_Multi.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
  ) 
 Here is how much of TeX's memory you used:
- 10346 strings out of 492641
- 153311 string characters out of 6131788
+ 10348 strings out of 492641
+ 153328 string characters out of 6131788
  288276 words of memory out of 5000000
- 14035 multiletter control sequences out of 15000+600000
+ 14037 multiletter control sequences out of 15000+600000
  32809 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,42p,1520b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,42p,1520b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1188,7 +1188,7 @@ y5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on Rapport_Stat_Multi.pdf (13 pages, 419294 bytes).
+Output written on Rapport_Stat_Multi.pdf (13 pages, 419315 bytes).
 PDF statistics:
  219 PDF objects out of 1000 (max. 8388607)
  165 compressed objects within 2 object streams

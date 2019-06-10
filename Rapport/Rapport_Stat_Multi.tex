@@ -63,7 +63,7 @@ Ce rapport est écrit dans le cadre du cours de \texttt{Statistique Multidimensi
 Pour cette question nous avions plusieurs sous-points à analyser: tout d'abord effectuer notre ACP des données à proprement dites, puis prédire à l'aide de notre analyse si le profil des données était stable et ensuite grouper les Provinces/Régions qui avaient des comportements similaires avec une méthode de classification hiérarchique ascendante. 
 
 \subsection{ACP}
-D'abord, les données ont été extraites et analysées. Les données représente l'évolution du pourcentage de chercheurs employés par les différentes provinces de Belgique.Un boxplot a été effectué avant et après centrage et réduction des données.
+D'abord, les données ont été extraites et analysées. Les données représente l'évolution du pourcentage de chercheurs employés par les différentes provinces de Belgique. Un boxplot a été effectué avant et après centrage et réduction des données.
 
  \includegraphics[width=15cm,height=8cm]{"Boxplot1"}
  
@@ -77,11 +77,11 @@ On peut déjà observer un aperçu du comportement des données d'une année à 
  
 On remarque que les données ont l'air de suivre un modèle linéaire dans le temps, nous verrons par la suite si c'est réellement le cas. 
 
-L'analyse en composante principale va permettre de mieux comprendre les données en réduisant le nombre de dimensions. Celle-ci va chercher un ou plusieurs axes ne passant plus forcèment par l'origine qui maximisent la distance entre tous les individus(dans notre cas les provinces)sur cet axe c'est à dire : $Max(H)(\sum_i^n \sum_j^n d_H^2(i,j))$ où n est le nombre d'individu, H l'axe en question et $d^2_H(i,j)$ la distance euclidienne entre 2 individus i et j sur l'axe H. Si $h_i$ est la projection de i sur l'axe H alors $d^2_H(i,j)=2n \sum_i^n (h_i - \bar{h})$ où $\bar{h}$ est la moyenne des projections de l'ensemble des individus sur H. On peut montrer que maximiser cette distance revient à maximiser la distance sur H entre tous les individus et le centre de gravité, on peut donc prendre celui-ci comme nouvelle origine et maximiser la distance des points à l'origine. Les nouvelles coordonnées des individus sont données par $x_{ij}=r_{ij} - \bar{r}_{ij}$. On décide ensuite de réduire nos données pour les mettre à l'échelle même si les variables ont les mêmes unités(pourcentages), on obtient donc les coordonnées centrées réduites : $x_{ij}=\frac{r_{ij} - \bar{r}_{ij}}{s_j \sqrt{n}}$ où $s_j$ est l'écart type de j.Après cette étape, nous voulons connaitre les similarités ou assimilarités entre la façon dont les variables varient les unes par rapport aux autres, pour se faire, la matrice de corrélation est calculée. la voici :
+L'analyse en composante principale va permettre de mieux comprendre les données en réduisant le nombre de dimensions. Celle-ci va chercher un ou plusieurs axes ne passant plus forcément par l'origine qui maximisent la distance entre tous les individus(dans notre cas les provinces)sur cet axe c'est à dire : $Max(H)(\sum_i^n \sum_j^n d_H^2(i,j))$ où n est le nombre d'individu, H l'axe en question et $d^2_H(i,j)$ la distance euclidienne entre 2 individus i et j sur l'axe H. Si $h_i$ est la projection de i sur l'axe H alors $d^2_H(i,j)=2n \sum_i^n (h_i - \bar{h})$ où $\bar{h}$ est la moyenne des projections de l'ensemble des individus sur H. On peut montrer que maximiser cette distance revient à maximiser la distance sur H entre tous les individus et le centre de gravité, on peut donc prendre celui-ci comme nouvelle origine et maximiser la distance des points à l'origine. Les nouvelles coordonnées des individus sont données par $x_{ij}=r_{ij} - \bar{r}_{ij}$. On décide ensuite de réduire nos données pour les mettre à l'échelle même si les variables ont les mêmes unités(pourcentages), on obtient donc les coordonnées centrées réduites : $x_{ij}=\frac{r_{ij} - \bar{r}_{ij}}{s_j \sqrt{n}}$ où $s_j$ est l'écart type de j.Après cette étape, nous voulons connaître les similarités ou asimilarités entre la façon dont les variables varient les unes par rapport aux autres, pour se faire, la matrice de corrélation est calculée. la voici :
  
  \includegraphics[width=15cm,height=10cm]{"Corr"}
  
-On remarque que toutes les correlations sont très proches de 1.Ceci s'explique par le fait que les données représentent l'évolution du pourcentage de chercheurs employés dans les différentes régions de Belgique au fil des ans. En effet, les valeurs de ce pourcentage d'une année à une autre sont fortement liées/correlées, la valeur de celui-ci à une année est basée sur sa valeur à l'année précédente et n'évolue pas drastiquement. La plus petite correlation est entre l'année 2008 et 2014, celle-ci vaut 0.915, ceci s'explique par le fait qu'il y a surement eu une inversion de tendance entre ces 2 années, que certaines villes ont eu un pourcentage plus élevé et l'inverse pour d'autres, par exemple le brabant wallon est passé de 1.55\% en 2008 à 3.1\% en 2014, la majorité des autres villes n'ont pas eu une telle augmentation.
+On remarque que toutes les corrélations sont très proches de 1.Ceci s'explique par le fait que les données représentent l'évolution du pourcentage de chercheurs employés dans les différentes régions de Belgique au fil des ans. En effet, les valeurs de ce pourcentage d'une année à une autre sont fortement liées/corrélées, la valeur de celui-ci à une année est basée sur sa valeur à l'année précédente et n'évolue pas drastiquement. La plus petite corrélation est entre l'année 2008 et 2014, celle-ci vaut 0.915, ceci s'explique par le fait qu'il y a sûrement eu une inversion de tendance entre ces 2 années, que certaines villes ont eu un pourcentage plus élevé et l'inverse pour d'autres, par exemple le brabant wallon est passé de 1.55\% en 2008 à 3.1\% en 2014, la majorité des autres villes n'ont pas eu une telle augmentation.
 
 Pour déterminer les composantes principales, c'est à dire les axes donnant la direction de la plus grande variance des données(vecteurs propres), il faut déterminer la portion de variance expliquée par chaque axe, ce n'est rien d'autres que les valeurs propres de la matrice de corrélation. Les voici :
 \begin{table}[h]
@@ -97,7 +97,7 @@ On remarque la première valeur propre est bien plus grande que les autres, en r
 
  \includegraphics[width=12cm,height=8cm]{"screebar"}
  
-Pour connaitre le nombre de facteurs à retenir, il y a plusieurs critères possibles.  
+Pour connaître le nombre de facteurs à retenir, il y a plusieurs critères possibles.  
 Selon le critère de Kaiser, il faudrait retenir celle qui ont une valeur propre plus grande que 1, dans notre cas, il ne faudrait donc retenir que la première.
 Un autre critère dit qu'il faut garder la valeur avant le "coude" c'est à dire l'éboulement dans le graphe de l'inertie que voici : 
  
@@ -136,11 +136,11 @@ On remarque que le coude s'effectue entre la première et la deuxième valeur, s
 
 Les coefficients de cette composante sont quasi identiques, ceci est le résultat du fait que toutes les variables sont fortement corrélées à celle-ci. Toutes les variables sont très proches du cercle des corrélations comme elles valent presque toutes 1.
 
-Sur les graphiques ci-dessous, pour chaque variable, on effectue une regression linéaire pour exprimer les valeurs initiales des individus en cette variable en fonction de leur valeurs dans la première composante. On remarque que pour toutes les variables, les points sont très proches de cette droite de régression, ceci explique le fait que la première composante explique tant de variance. La première composante suffit à elle toute seule pour résumer en une dimension toutes les informations.
+Sur les graphiques ci-dessous, pour chaque variable, on effectue une régression linéaire pour exprimer les valeurs initiales des individus en cette variable en fonction de leur valeurs dans la première composante. On remarque que pour toutes les variables, les points sont très proches de cette droite de régression, ceci explique le fait que la première composante explique tant de variance. La première composante suffit à elle toute seule pour résumer en une dimension toutes les informations.
 
 	\includegraphics[width=10cm,height=7cm]{"score"} 
 	
-Les nouvelle coordonnées des individus sur cette composante peuvent être obtenues par la formule : $N_i=\sum_j^n u_j x_{ij}$ où n est le nombre de variables, $u_j$ est le $j^{eme}$ coefficient de la composante dans les anciens axes et $x_{ij}$ est $j^{eme}$ coordonnée de l'individu i dans les anciens axes(centré et réduit).On peut aussi déterminer la contribution de chaque individu à l'inertie de la composante par : $Cr(i)=N_i^2$.
+Les nouvelle coordonnées des individus sur cette composante peuvent être obtenues par la formule : $N_i=\sum_j^n u_j x_{ij}$ où n est le nombre de variables, $u_j$ est le $j^{eme}$ coefficient de la composante dans les anciens axes et $x_{ij}$ est $j^{eme}$ coordonnée de l'individu i dans les anciens axes(centré et réduit). On peut aussi déterminer la contribution de chaque individu à l'inertie de la composante par : $Cr(i)=N_i^2$.
 \begin{table}[h]
 \centering 
 \begin{tabular}{|c|c|c|} 
@@ -208,7 +208,7 @@ La voici:\\
 \end{tabularx}
 
 Après avoir calculé ces distances, nous devions pouvoir trouver un moyen de regrouper ces distances pour pouvoir à la fin les classer en différents groupes. Pour cela, nous avons réalisé l'arbre des distances qui contient, sous forme d'arbre les relations entre chaque composante en fonction de sa distance par rapport aux autres. Le résultat est obtenu via l'algorithme suivant:
-
+\newpage
 \begin{itemize}
 	\item[Etape 1] n élément à classer
 	\item[Etape 2] Calculer la matrice des distances et chercher les individus pour lesquels la distance est minimale. 
